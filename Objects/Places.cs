@@ -5,12 +5,14 @@ namespace PlacesBeen.Objects
   public class Places
   {
     private string _location;
+    private string _season;
     private int _id;
     private static List<Places> _instances = new List<Places> {};
 
-    public Places (string city)
+    public Places (string city, string season)
     {
       _location = city;
+      _season = season;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -21,6 +23,14 @@ namespace PlacesBeen.Objects
     public void SetCity(string newCity)
     {
       _location = newCity;
+    }
+    public string GetSeason()
+    {
+      return _season;
+    }
+    public void SetSeason(string newSeason)
+    {
+      _season = newSeason;
     }
     public int GetId()
     {

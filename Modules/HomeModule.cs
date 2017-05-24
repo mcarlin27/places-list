@@ -22,7 +22,7 @@ namespace PlacesBeen
       };
 
       Post["/places"] = _ => {
-        Places newPlaces = new Places (Request.Form["new-place"]);
+        Places newPlaces = new Places (Request.Form["new-place"], Request.Form["new-season"]);
         List<Places> allPlaces = Places.GetAll();
         return View["/places.cshtml", allPlaces];
       };
