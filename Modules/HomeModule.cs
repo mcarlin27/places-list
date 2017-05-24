@@ -27,6 +27,11 @@ namespace PlacesBeen
         return View["/places.cshtml", allPlaces];
       };
 
+      Get["/places/{id}"] = parameters => {
+        Places place = Places.Find(parameters.id);
+        return View["/place.cshtml", place];
+      };
+
     }
   }
 }
